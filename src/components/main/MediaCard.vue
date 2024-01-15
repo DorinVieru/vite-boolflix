@@ -38,6 +38,17 @@ export default {
             }
 
         },
+
+        // FUNZIONE PER IMG
+        imgUrl() {
+            return `${this.store.imgUrl}${this.film.poster_path}`
+        },
+
+        // FUNZIONE PER LE STELLE PER LA VALUTAZIONE
+        getVote() {
+            let voteRate = Math.ceil(this.film.vote_average / 2)
+            return voteRate
+        }
     },
 }
 </script>
@@ -51,10 +62,10 @@ export default {
 
             <!-- IMG SECTION CARD -->
             <div class="img-container">
-                
+                <img :src="imgUrl" alt="">
             </div>
 
-            <div>
+            <div class="px-2">
                 <!-- FILM TITLE -->
                 <div>
                     <h4> Titolo originale: {{ film.title }}</h4>
@@ -77,7 +88,16 @@ export default {
 
                 <!-- VOTE FILM -->
                 <div>
-                    <p>Voto: {{ film.vote_average }} </p>
+                    <p>Voto:
+                        <!-- Stelle piene -->
+                        <span v-for="index in getVote" :key="index">
+                            <i class="fas fa-star starGold"></i>
+                        </span>
+                        <!-- Stelle vuote -->
+                        <span v-for="index in 5 - getVote" :key="index">
+                            <i class="far fa-star"></i>
+                        </span> 
+                    </p>
                 </div>
 
             </div>
@@ -104,6 +124,10 @@ export default {
         color: white;
         margin-top: 7px;
     }
+
+    .starGold {
+            color: gold;
+        }
 
     .media {
         width: 100%;

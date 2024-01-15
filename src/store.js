@@ -21,4 +21,7 @@ export const store = reactive({
     // VARIABILE SEARCH & VARIABILE CHE INDICA SE LA RICERCA E' STATA EFFETTUATA OPPURE NO
     search: '',
     researched: false,
+
+    // VARIABILE PER L'INDIRIZZO DELL'IMMAGINE
+    imgUrl: 'https://image.tmdb.org/t/p/w500'
 })

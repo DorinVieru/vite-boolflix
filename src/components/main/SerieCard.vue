@@ -37,6 +37,17 @@ export default {
             }
 
         },
+
+        // FUNZIONE PER IMG
+        imgUrl() {
+            return `${this.store.imgUrl}${this.serieTv.poster_path}`
+        },
+
+        // FUNZIONE PER LE STELLE PER LA VALUTAZIONE
+        getVote() {
+            let voteRate = Math.ceil(this.serieTv.vote_average / 2)
+            return voteRate
+        }
     },
 }
 </script>
@@ -50,10 +61,10 @@ export default {
 
             <!-- IMG SECTION CARD -->
             <div class="img-container">
-                
+                <img :src="imgUrl" alt="">
             </div>
 
-            <div>
+            <div class="px-2">
                 <!-- TV SERIES TITLE -->
                 <div>
                     <h4> Titolo originale: {{ serieTv.original_name }}</h4>
@@ -76,7 +87,16 @@ export default {
 
                 <!-- VOTE TV SERIES -->
                 <div>
-                    <p>Voto: {{ serieTv.vote_average }} </p>
+                    <p>Voto:
+                        <!-- Stelle piene -->
+                        <span v-for="index in getVote" :key="index">
+                            <i class="fas fa-star starGold"></i>
+                        </span>
+                        <!-- Stelle vuote -->
+                        <span v-for="index in 5 - getVote" :key="index">
+                            <i class="far fa-star"></i>
+                        </span> 
+                    </p>
                 </div>
 
             </div>
@@ -103,6 +123,10 @@ export default {
         color: white;
         margin-top: 7px;
     }
+    
+    .starGold {
+            color: gold;
+        }
 
     .media {
         width: 100%;
