@@ -32,7 +32,7 @@ export default {
 
             <!-- IMG SECTION CARD -->
             <div class="img-container">
-                <img :src="imgUrl" alt="">
+                
             </div>
 
             <div>

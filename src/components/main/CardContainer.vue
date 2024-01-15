@@ -1,6 +1,7 @@
 <!-- SEZIONE JS SCRIPT -->
 <script>
 import MediaCard from './MediaCard.vue';
+import SerieCard from './SerieCard.vue';
 
 import { store } from '../../store';
 
@@ -8,6 +9,7 @@ export default {
    name: "CardContainer",
    components: {
     MediaCard,
+    SerieCard,
    },
 
     data() {
@@ -23,8 +25,12 @@ export default {
  <!-- Card container -->
     <div class="row pt-5">
         <!-- TITLE & CARD FILMS -->
-        <h2 class="mt-1 ">Film</h2>
+        <h2 class="mt-1" v-if="store.filmsrray != 0 ? true : false">Film</h2>
         <MediaCard v-for="film, index in store.filmsArray" :key="index" :film="film" />
+        
+        <!-- TITLE & CARDS TV SERIES -->
+        <h2 class="my-2" v-if="store.seriesTvArray != 0 ? true : false">Serie Tv</h2>
+        <SerieCard v-for="serie, index in store.seriesTvArray" :key="index" :serieTv="serie" />
     </div>
 </template>
 

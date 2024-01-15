@@ -10,15 +10,11 @@ export const store = reactive({
     // CHIAVE APIPER AVER ACCESSO ALL'ENDPOINT
     apiKey: '?api_key=f54dacff7580dd4c715828a9902a15d2',
 
-    // Array delle informazioni dei film
+    // ARRAY FILMS & TV SERIS
     filmsArray: [],
+    seriesTvArray: [],
 
-    // Search textbox variable
+    // VARIABILE SEARCH & VARIABILE CHE INDICA SE LA RICERCA E' STATA EFFETTUATA OPPURE NO
     search: '',
-
-    // Variabile che indica se la ricerca sia stata effettuata o no
     researched: false,
-
-    // Variabile per l'indirizzo relativo delle immagini
-    imgUrl: 'https://image.tmdb.org/t/p/w500'
 })
