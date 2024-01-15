@@ -25,7 +25,7 @@ export default {
   methods: {
     getFilmsAndTvInfo() {
       // VARIABILE API CHE RICHIAMA I FILM
-      let apiFilms = `${store.endpoint}${store.apiSearchFilms}${store.apiKey}&query=${store.search}`;
+      let apiFilms = `${store.endpoint}${store.apiSearchFilms}${store.apiKey}${store.language}&query=${store.search}`;
 
       axios.get(apiFilms).then((response) => {
         store.filmsArray = response.data.results;

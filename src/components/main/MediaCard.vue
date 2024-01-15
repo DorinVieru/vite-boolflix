@@ -16,8 +16,28 @@ export default {
 
     },
     computed: {
-        imgUrl() {
-            return `${this.store.imgUrl}${this.film.poster_path}`
+        // Funzione che mi fa ritornare la bandiera in base alla lingua del film
+        // (Con delle condizioni, poiché l'api che utilizzo e l'array dei film hanno iniziali diverse per le nazioni)
+        FlagUrl() {
+            if (this.film.original_language.toUpperCase() == 'JA') {
+                return `https://flagsapi.com/JP/flat/24.png`;
+            }
+            else if (this.film.original_language.toUpperCase() == 'KO') {
+                return `https://flagsapi.com/KR/flat/24.png`;
+            }
+            else if (this.film.original_language.toUpperCase() == 'EN') {
+                return `https://flagsapi.com/GB/flat/24.png`;
+            }
+            else if (this.film.original_language.toUpperCase() == 'ES') {
+                return `https://flagsapi.com/ES/flat/24.png`;
+            }
+            else if (this.film.original_language.toUpperCase() == 'ZH') {
+                return `https://flagsapi.com/CN/flat/24.png`;
+            }
+            else {
+                return `https://flagsapi.com/${this.film.original_language.toUpperCase()}/flat/24.png`
+            }
+
         },
     },
 }
@@ -38,12 +58,12 @@ export default {
             <div>
                 <!-- FILM TITLE -->
                 <div>
-                    <h4> {{ film.title }}</h4>
+                    <h4> Titolo originale: {{ film.title }}</h4>
                 </div>
 
                 <!-- ORIGINAL TILTLE FILM -->
                 <div>
-                    <h5> {{ film.original_title }}</h5>
+                    <h5> Titolo: {{ film.original_title }}</h5>
                 </div>
 
                 <!-- OVERWIEV FILM -->
@@ -53,7 +73,7 @@ export default {
 
                 <!-- LENGUAGE FILM -->
                 <div>
-                    <p>{{ film.original_language }}</p>
+                    <span> Lingua: <img class="flag-img" :src="FlagUrl" :alt="film.original_language" /></span>
                 </div>
 
                 <!-- VOTE FILM -->
@@ -78,10 +98,13 @@ export default {
     height: 100%;
     width: 280px;
 
+    .flag-img,
     h4,
     h5,
-    p{
+    p,
+    span{
         color: white;
+        margin-top: 7px;
     }
 
     .media {
