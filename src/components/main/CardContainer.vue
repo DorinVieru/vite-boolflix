@@ -29,8 +29,8 @@ export default {
         <MediaCard v-for="film, index in store.filmsArray" :key="index" :film="film" />
         
         <!-- TITLE & CARDS TV SERIES -->
-        <h2 class="my-2" v-if="store.seriesTvArray != 0 ? true : false">Serie Tv</h2>
-        <SerieCard v-for="serie, index in store.seriesTvArray" :key="index" :serieTv="serie" />
+        <h2 class="mt-3" v-if="store.seriesTvArray != 0 ? true : false">Serie Tv</h2>
+        <SerieCard v-for="tv, index in store.seriesTvArray" :key="index" :serieTv="tv" />
     </div>
 </template>
 

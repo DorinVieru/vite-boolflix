@@ -97,7 +97,6 @@ export default {
     height: 100%;
     width: 280px;
 
-    .flag-img,
     h4,
     h5,
     p,
