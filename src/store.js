@@ -11,6 +11,7 @@ export const store = reactive({
     // CHIAVE APIPER AVER ACCESSO ALL'ENDPOINT
     apiKey: '?api_key=f54dacff7580dd4c715828a9902a15d2',
 
+    // VARIABILE PER LA LINGUA DELL'API
     language: '&language=it_IT',
 
     // ARRAY FILMS & TV SERIS

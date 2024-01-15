@@ -31,6 +31,14 @@ export default {
         store.filmsArray = response.data.results;
       });
 
+      // VARIABILE API CHE RICHIAMA LE SERIE TV
+      let apiSeriesTv = `${store.endpoint}${store.apiSearchSeriesTv}${store.apiKey}${store.language}&query=${store.search}`;
+
+      axios.get(apiSeriesTv).then((response) => {
+        store.seriesTvArray = response.data.results;
+        console.log(store.seriesTvArray)
+      });
+
     },
   },
 }

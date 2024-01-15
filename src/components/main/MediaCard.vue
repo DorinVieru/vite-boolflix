@@ -16,9 +16,8 @@ export default {
 
     },
     computed: {
-        // Funzione che mi fa ritornare la bandiera in base alla lingua del film
-        // (Con delle condizioni, poiché l'api che utilizzo e l'array dei film hanno iniziali diverse per le nazioni)
-        FlagUrl() {
+        // FUNZIONE PER LE FLAG
+        Flaglanguage() {
             if (this.film.original_language.toUpperCase() == 'JA') {
                 return `https://flagsapi.com/JP/flat/24.png`;
             }
@@ -73,7 +72,7 @@ export default {
 
                 <!-- LENGUAGE FILM -->
                 <div>
-                    <span> Lingua: <img class="flag-img" :src="FlagUrl" :alt="film.original_language" /></span>
+                    <span> Lingua: <img class="flag-img" :src="Flaglanguage" :alt="film.original_language" /></span>
                 </div>
 
                 <!-- VOTE FILM -->
