@@ -41,7 +41,12 @@ export default {
 
         // FUNZIONE PER IMG
         imgUrl() {
-            return `${this.store.imgUrl}${this.film.poster_path}`
+            if(this.film.poster_path !== null){
+                return `${this.store.imgUrl}${this.film.poster_path}`
+            }
+            else{
+                return '../../../public/image_not_found.jpg'
+            }
         },
 
         // FUNZIONE PER LE STELLE PER LA VALUTAZIONE
@@ -80,7 +85,7 @@ export default {
 
                 <!-- OVERWIEV FILM -->
                 <div>
-                    <p>{{ film.overview }}</p>
+                    <p> Trama: {{ film.overview }}</p>
                 </div>
 
                 <!-- LENGUAGE FILM -->
@@ -90,7 +95,7 @@ export default {
 
                 <!-- VOTE FILM -->
                 <div>
-                    <p>Voto:
+                    <p> Voto:
                         <!-- STELLLE PIENE -->
                         <span v-for="index in getVote" :key="index">
                             <i class="fas fa-star starGold"></i>

@@ -30,6 +30,7 @@
             transition: transform 0.9s;
             transform-style: preserve-3d;
             background-color: $my_black;
+            border-radius: 10px;
 
 
             // IMG CONTAINER
@@ -40,25 +41,28 @@
                 background-color: $my_black;
                 -webkit-backface-visibility: hidden;
                 color: $my_black;
+                border-radius: 10px;
     
 
                 img {
                     width: 100%;
                     height: 100%;
+                    border-radius: 10px;
                 }
             }
         }
 
         .media-retro-container {
-        overflow-y: auto;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        -webkit-backface-visibility: hidden;
-        background-color: $my_black;
-        color: white;
-        transform: rotateY(180deg);
-        padding: 10px 7px;
+            overflow-y: auto;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            -webkit-backface-visibility: hidden;
+            background-color: $my_black;
+            color: white;
+            transform: rotateY(180deg);
+            padding: 10px 7px;
+            border-radius: 10px;
         }
 }

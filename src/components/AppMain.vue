@@ -31,5 +31,6 @@ export default {
 
 main{
     background-color: $main_bg;
+    padding-bottom: 70px;
 }
 </style>

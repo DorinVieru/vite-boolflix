@@ -26,7 +26,13 @@ export default {
             <div class="col-6">
                 <div class="header-dx pe-4 d-flex align-items-center justify-content-end">
                     <input type="text" class="input-header" placeholder="Effettua una ricerca" @keyup.enter="$emit('media_search')" v-model="store.search">
-                    <button type="button" @click="$emit('media_search')" class="btn-header mx-4">Cerca</button>
+                    <button type="button" @click="$emit('media_search')" class="btn-header mx-1">Cerca</button>
+                    <i class="fa-solid fa-bell ms-4"></i>
+                    <span class="badge my-bdg">99+</span>
+                    <i class="fa-solid fa-user mx-3"></i>
+                    <span class="position-absolute translate-middle border border-light rounded-circle profile-badge">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
                 </div>
             </div>
         </div>
@@ -41,6 +47,30 @@ export default {
 
 header {
     background-color: $my_black;
+
+    .fa-solid{
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .my-bdg{
+        background-color: $red_button;
+        border-radius: 50%;
+        position: relative;
+        top: -10px;
+        right: 2px;
+        padding: 5px;
+        font-size: 11px;
+        cursor: pointer;
+    }
+
+    .profile-badge{
+        background-color: $red_button;
+        top: 33px;
+        right: 37px;
+        padding: 5px;
+    }
 
     .title-header{
         color: $red_button;
@@ -66,7 +96,7 @@ header {
         .input-header {
             height: 30px;
             width: 250px;
-            padding: 20px 15px;
+            padding: 18px 15px;
             margin-right: 5px;
             border: none;
             color: white;

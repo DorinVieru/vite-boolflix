@@ -40,7 +40,12 @@ export default {
 
         // FUNZIONE PER IMG
         imgUrl() {
-            return `${this.store.imgUrl}${this.serieTv.poster_path}`
+            if (this.serieTv.poster_path !== null) {
+                return `${this.store.imgUrl}${this.serieTv.poster_path}`
+            }
+            else {
+                return '../../../public/image_not_found.jpg'
+            }
         },
 
         // FUNZIONE PER LE STELLE PER LA VALUTAZIONE
@@ -79,7 +84,7 @@ export default {
 
                 <!-- OVERWIEV TV SERIES -->
                 <div>
-                    <p>{{ serieTv.overview }}</p>
+                    <p> Trama: {{ serieTv.overview }}</p>
                 </div>
 
                 <!-- LENGUAGE TV SERIES -->
