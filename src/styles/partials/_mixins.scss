@@ -4,8 +4,9 @@
 
 // REGOLE PER LE CARDS
 @mixin istruction_cards{
-        height: 100%;
-        width: 280px;
+        height: 470px;
+        width: 250px;
+        perspective: 1000px;
 
         // REGOLE PER I TITOLI, P E SPAN NELLE CARDS
         h4,
@@ -22,21 +23,42 @@
         }
 
         .media {
+            position: relative;
             width: 100%;
             height: 100%;
             text-align: center;
-            background-color: #0D0D0D;
+            transition: transform 0.9s;
+            transform-style: preserve-3d;
+            background-color: $my_black;
+
 
             // IMG CONTAINER
             .img-container {
+                position: absolute;
                 height: 100%;
                 width: 100%;
-                color: black;
+                background-color: $my_black;
+                -webkit-backface-visibility: hidden;
+                color: $my_black;
+    
 
                 img {
                     width: 100%;
                     height: 100%;
                 }
             }
+        }
+
+        .media-retro-container {
+        overflow-y: auto;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        -webkit-backface-visibility: hidden;
+        background-color: $my_black;
+        color: white;
+        transform: rotateY(180deg);
+        padding: 10px 7px;
         }
 }

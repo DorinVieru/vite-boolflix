@@ -56,7 +56,7 @@ export default {
 <!-- SEZIONE HTML -->
 <template lang="">
    <!-- CARD CONTAINER -->
-    <div class="col-2 my-3 media-container">
+    <div class="col-3 my-3 media-container">
 
         <div class="media">
 
@@ -70,12 +70,12 @@ export default {
             <div class="px-2 media-retro-container">
                 <!-- FILM TITLE -->
                 <div>
-                    <h4> Titolo originale: {{ film.title }}</h4>
+                    <h4> Titolo originale: {{ film.original_title }}</h4>
                 </div>
 
                 <!-- ORIGINAL TILTLE FILM -->
                 <div>
-                    <h5> Titolo: {{ film.original_title }}</h5>
+                    <h5> Titolo: {{ film.title }}</h5>
                 </div>
 
                 <!-- OVERWIEV FILM -->
@@ -85,7 +85,7 @@ export default {
 
                 <!-- LENGUAGE FILM -->
                 <div>
-                    <span> Lingua: <img class="flag-img" :src="Flaglanguage" :alt="film.original_language" /></span>
+                    <span> Lingua: <img :src="Flaglanguage" :alt="film.original_language" /></span>
                 </div>
 
                 <!-- VOTE FILM -->
@@ -118,6 +118,10 @@ export default {
 // STILE DELLE CARDS
 .media-container{
     @include istruction_cards;
+}
+
+.media-container:hover .media{
+    transform: rotateY(180deg);
 }
 
 </style>

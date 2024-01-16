@@ -55,16 +55,18 @@ export default {
 <!-- SEZIONE HTML -->
 <template lang="">
   <!-- CARD CONTAINER -->
-    <div class="col-2 my-3 media-container">
+    <div class="col-3 my-3 media-container">
 
         <div class="media">
 
+            <!-- CARD FRONT -->
             <!-- IMG SECTION CARD -->
             <div class="img-container">
                 <img :src="imgUrl" alt="">
             </div>
 
-            <div class="px-2">
+            <!-- CARD RETRO -->
+            <div class="px-2 media-retro-container">
                 <!-- TV SERIES TITLE -->
                 <div>
                     <h4> Titolo originale: {{ serieTv.original_name }}</h4>
@@ -82,7 +84,7 @@ export default {
 
                 <!-- LENGUAGE TV SERIES -->
                 <div>
-                    <span> Lingua: <img class="flag-img" :src="Flaglanguage" :alt="serieTv.original_language" /></span>
+                    <span> Lingua: <img :src="Flaglanguage" :alt="serieTv.original_language" /></span>
                 </div>
 
                 <!-- VOTE TV SERIES -->
@@ -115,6 +117,10 @@ export default {
 // STILE DELLE CARDS
 .media-container{
     @include istruction_cards;
+}
+
+.media-container:hover .media{
+    transform: rotateY(180deg);
 }
 
 </style>

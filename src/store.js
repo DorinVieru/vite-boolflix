@@ -12,7 +12,7 @@ export const store = reactive({
     apiKey: '?api_key=f54dacff7580dd4c715828a9902a15d2',
 
     // VARIABILE PER LA LINGUA DELL'API
-    language: '&language=it_IT',
+    language: '&language=it',
 
     // ARRAY FILMS & TV SERIS
     filmsArray: [],
