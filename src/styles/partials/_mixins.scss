@@ -1,0 +1,42 @@
+// UTILIZZO DELLE IMPOSTAZIONI GENERALI E DELLE VARIABILI
+@use './variables' as *;
+@use '../generals.scss' as *;
+
+// REGOLE PER LE CARDS
+@mixin istruction_cards{
+        height: 100%;
+        width: 280px;
+
+        // REGOLE PER I TITOLI, P E SPAN NELLE CARDS
+        h4,
+        h5,
+        p,
+        span {
+            color: white;
+            margin-top: 7px;
+        }
+
+        // STAR
+        .starGold {
+            color: gold;
+        }
+
+        .media {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: #0D0D0D;
+
+            // IMG CONTAINER
+            .img-container {
+                height: 100%;
+                width: 100%;
+                color: black;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+}

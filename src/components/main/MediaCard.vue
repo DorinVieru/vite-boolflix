@@ -60,12 +60,14 @@ export default {
 
         <div class="media">
 
+            <!-- FRONT CARD -->
             <!-- IMG SECTION CARD -->
             <div class="img-container">
                 <img :src="imgUrl" alt="">
             </div>
 
-            <div class="px-2">
+            <!-- CARD RETRO -->
+            <div class="px-2 media-retro-container">
                 <!-- FILM TITLE -->
                 <div>
                     <h4> Titolo originale: {{ film.title }}</h4>
@@ -89,11 +91,11 @@ export default {
                 <!-- VOTE FILM -->
                 <div>
                     <p>Voto:
-                        <!-- Stelle piene -->
+                        <!-- STELLLE PIENE -->
                         <span v-for="index in getVote" :key="index">
                             <i class="fas fa-star starGold"></i>
                         </span>
-                        <!-- Stelle vuote -->
+                        <!-- STELLE VUOTE -->
                         <span v-for="index in 5 - getVote" :key="index">
                             <i class="far fa-star"></i>
                         </span> 
@@ -111,43 +113,11 @@ export default {
 <style lang="scss" scoped>
 @use '../../styles/partials/variables' as *;
 @use '../../styles/generals.scss' as *;
+@use '../../styles/partials/mixins' as *;
 
 // STILE DELLE CARDS
-.media-container {
-    height: 100%;
-    width: 280px;
-
-    h4,
-    h5,
-    p,
-    span{
-        color: white;
-        margin-top: 7px;
-    }
-
-    .starGold {
-            color: gold;
-        }
-
-    .media {
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        background-color: $header_bg;
-
-        .img-container {
-            height: 100%;
-            width: 100%;
-            color: black;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-
+.media-container{
+    @include istruction_cards;
 }
-
 
 </style>

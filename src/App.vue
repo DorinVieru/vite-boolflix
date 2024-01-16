@@ -48,7 +48,7 @@ export default {
 <template lang="">
   <div>
       <!-- HEADER -->
-      <AppHeader @perform_search="getFilmsAndTvInfo" />
+      <AppHeader @media_search="getFilmsAndTvInfo" />
       <div>
         <!-- MAIN -->
         <AppMain />

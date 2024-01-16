@@ -110,41 +110,11 @@ export default {
 <style lang="scss" scoped>
 @use '../../styles/partials/variables' as *;
 @use '../../styles/generals.scss' as *;
+@use '../../styles/partials/mixins' as *;
 
 // STILE DELLE CARDS
-.media-container {
-    height: 100%;
-    width: 280px;
-
-    h4,
-    h5,
-    p,
-    span{
-        color: white;
-        margin-top: 7px;
-    }
-    
-    .starGold {
-            color: gold;
-        }
-
-    .media {
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        background-color: $header_bg;
-
-        .img-container {
-            height: 100%;
-            width: 100%;
-            color: black;
-
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-
+.media-container{
+    @include istruction_cards;
 }
+
 </style>

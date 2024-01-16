@@ -25,8 +25,8 @@ export default {
             <!-- HEADER DX -->
             <div class="col-6">
                 <div class="header-dx pe-4 d-flex align-items-center justify-content-end">
-                    <input type="text" class="src-header" placeholder="Effettua una ricerca" v-model="store.search">
-                    <button type="button" @click="$emit('perform_search')" class="btn-header mx-4 ">Cerca</button>
+                    <input type="text" class="input-header" placeholder="Effettua una ricerca" @keyup.enter="$emit('media_search')" v-model="store.search">
+                    <button type="button" @click="$emit('media_search')" class="btn-header mx-4">Cerca</button>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ export default {
 
 
 header {
-    background-color: $header_bg;
+    background-color: $my_black;
 
     .title-header{
         color: $red_button;
@@ -63,7 +63,7 @@ header {
             }
         }
 
-        .src-header {
+        .input-header {
             height: 30px;
             width: 250px;
             padding: 20px 15px;
